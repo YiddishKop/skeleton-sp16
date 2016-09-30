@@ -110,13 +110,13 @@ public class IntList {
     		/*
     		 * TODO A = 1,2,3;  B = 4,5,6;
     		 * this is good, answer is right
-    		 * dcatenateRecursive(A.tail, B);
-    		 * return A;
+    		 dcatenateRecursive(A.tail, B);
+    		 return A;
     		 */
     		/*
     		 * TODO A = 1,2,3;  B = 4,5,6;
     		 * this is bad, answer is only 3,4,5,6
-    		 * return dcatenateRecursive(A.tail, B);
+    		 return dcatenateRecursive(A.tail, B);
     		 */
     		dcatenateRecursive(A.tail, B);        
     		return A;
