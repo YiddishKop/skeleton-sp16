@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+
 /**
  *  Tests Nbody.readRadius. Reads in ./data/planets.txt and checks to see that
  *  result matches hard coded value.
@@ -22,8 +24,9 @@ public class TestReadRadius {
 
     /**
      *  Checks the NBody.readRadius() method.
+     * @throws FileNotFoundException 
      */
-    private static void checkReadRadius() {
+    private static void checkReadRadius() throws FileNotFoundException {
         System.out.println("Checking readRadius...");
         String planetsTxtPath = "./data/planets.txt";
         /* If the following line fails to compile, you probably need to make
@@ -33,6 +36,11 @@ public class TestReadRadius {
     }
 
     public static void main(String[] args) {
-        checkReadRadius();
+        try {
+			checkReadRadius();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }

@@ -118,6 +118,7 @@ See `IntList.java` in the IntList directory for a refresher. We've added a metho
 - `myList.tail.tail.tail` returns 3 -> null
 - `myList.tail.tail.tail.tail` returns null
 - Pop quiz: what happens for `myList.tail.tail.tail.tail.tail`? (Hint: it doesn't successfully return something)
+- [yiddi: answer] null.tail will cause a null-pointer error
 
 Observe that the `IntList.list()` method makes it much easier to create IntLists compared to the naive approach we used in class:
 

@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+
 /**
  *  Tests Nbody.readPlanets. Reads in ./data/planets.txt and checks output of
  *  readPlanets().
@@ -8,8 +10,9 @@ public class TestReadPlanets {
         return Math.abs(expected - actual) <= eps * Math.max(expected, actual);
     }
 
-    /** Checks to make sure that readPlanets() works perfectly. */
-    private static String checkReadPlanets() {
+    /** Checks to make sure that readPlanets() works perfectly. 
+     * @throws FileNotFoundException */
+    private static String checkReadPlanets() throws FileNotFoundException {
         System.out.println("Checking readPlanets...");
         String planetsTxtPath = "./data/planets.txt";
         /* If the following line fails to compile, you probably need to make
@@ -85,7 +88,7 @@ public class TestReadPlanets {
         return "PASS: readPlanets(); Congrats! This was the hardest test!";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         String testResult = checkReadPlanets();
         System.out.println(testResult);
     }

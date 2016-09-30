@@ -1,4 +1,9 @@
+import static org.junit.Assert.assertEquals;
+
 import java.util.Formatter;
+
+import sun.applet.Main;
+
 
 /**
  * Scheme-like pairs that can be used to form a list of integers.
@@ -80,17 +85,60 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        return null;
+    	// use il scan A, if il.tail == null; than stop.
+    	// make il.tail = B;
+    	IntList il = A;
+    	while(il.tail != null) {
+    		il = il.tail;
+    	}
+    	il.tail = B;
+        return A;
     }
-
+    public static void main(String[] args) {
+        IntList A = IntList.list(1, 2, 3);
+        IntList B = IntList.list(4, 5, 6);
+        IntList exp = IntList.list(1, 2, 3, 4, 5, 6);
+        IntList.dcatenateRecursive(A, B);
+	}
+    public static IntList dcatenateRecursive(IntList A, IntList B) {
+    	// use recursive method, catenate(Ð¡A£¬B)
+    	// until A is null, than change 'null' to B
+    	if(A.tail == null) {
+    		A.tail = B;
+    		return A;
+    	}else {
+    		/*
+    		 * TODO A = 1,2,3;  B = 4,5,6;
+    		 * this is good, answer is right
+    		 * dcatenateRecursive(A.tail, B);
+    		 * return A;
+    		 */
+    		/*
+    		 * TODO A = 1,2,3;  B = 4,5,6;
+    		 * this is bad, answer is only 3,4,5,6
+    		 * return dcatenateRecursive(A.tail, B);
+    		 */
+    		dcatenateRecursive(A.tail, B);        
+    		return A;
+    	}
+    }
     /**
      * Returns a list consisting of the elements of A followed by the
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        return null;
+    	// if A.tail not null, build a node, link it to the next
+    	// until A.tail is null, link recent node.tail = B;
+    	if (A == null) {
+			return B;
+		}else if(A.tail == null) {
+			IntList il = new IntList(A.head, B);
+			return il;
+		}else {
+			IntList iltail = catenate(A.tail, B);
+			IntList il = new IntList(A.head, iltail);
+			return il;
+		}
     }
 
 

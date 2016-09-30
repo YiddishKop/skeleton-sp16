@@ -1,5 +1,4 @@
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class IntListTest {
@@ -56,7 +55,14 @@ public class IntListTest {
         assertEquals(exp, IntList.dcatenate(A, B));
         assertEquals(IntList.list(1, 2, 3, 4, 5, 6), A);
     }
-
+    @Test
+    public void testdcatenateRecursive() {
+        IntList A = IntList.list(1, 2, 3);
+        IntList B = IntList.list(4, 5, 6);
+        IntList exp = IntList.list(1, 2, 3, 4, 5, 6);
+        assertEquals(exp, IntList.dcatenateRecursive(A, B));
+        assertEquals(IntList.list(1, 2, 3, 4, 5, 6), A);
+    }
     @Test
     public void testCatenate() {
         IntList A = IntList.list(1, 2, 3);
