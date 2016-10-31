@@ -6,9 +6,13 @@ public class PalindromeFinder {
 
         while (!in.isEmpty()) {
             String word = in.readString();
-            if (word.length() >= minLength && Palindrome.isPalindrome(word)) {
-                System.out.println(word);
-            }
+            
+//            if (word.length() >= minLength && Palindrome.isPalindrome(word)) {
+//                System.out.println(word);
+//            }
+            if (word.length() >= minLength && Palindrome.isPalindrome(word, new OffByN(2))) {
+				System.out.println(word);
+			}
         }
     }
 } 

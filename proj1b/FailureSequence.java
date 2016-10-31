@@ -27,7 +27,7 @@ public class FailureSequence {
 
     /** Returns a String representation for this FailureSequence. */
     public String toString() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();  // 这个没见过， StringBuilder
         for (int i = 0; i < opSequence.size(); i += 1) {
             sb.append(opSequence.get(i) + "\n");
         }

@@ -11,6 +11,5 @@ public class FailureSequenceDemo {
         fs.addOperation(dequeOp3);
 
         System.out.println(fs.toString());
-
     }
 } 
